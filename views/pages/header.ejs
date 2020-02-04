@@ -17,3 +17,13 @@
        <a href="/" class="header item">Accueil</a>
     </div>
     <div class="ui main container">
+        <% if (locals.error) { %>
+        <div class="ui negative message">
+            <%= error %>
+        </div>
+        <% } %>
+        <% if(locals.success) { %>
+            <div class="ui positive message">
+                <%= success %>
+            </div>
+        <% } %>
