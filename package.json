@@ -1,0 +1,26 @@
+{
+  "name": "nodejs_tuto",
+  "version": "0.0.1",
+  "description": "This project is a node js tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MehdiMahjoub/NodeJs_tuto.git"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "sql",
+    "sequelize",
+    "docker"
+  ],
+  "author": "mehdimahjoub",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MehdiMahjoub/NodeJs_tuto/issues"
+  },
+  "homepage": "https://github.com/MehdiMahjoub/NodeJs_tuto#readme"
+}
