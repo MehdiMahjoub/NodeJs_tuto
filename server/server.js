@@ -32,24 +32,21 @@ app.use(require('./middlewares/flash'))
 
 // routes
 app.get('/', (req, res) => {
-    // if (req.session.error) {
-    //     res.locals.error = req.session.error
-    //     req.session.error = undefined
-    // } else if (req.session.success) {
-    //     res.locals.success = req.session.success
-    //     req.session.success = undefined
-    // }
-    res.render('pages/index')
+    // get All messages
+    const Message = require('./models/message')
+    Message.all ((messages) => {
+        res.render('pages/index', {messages: messages})
+    })
+    // res.render('pages/index')
 })
 
 app.post('/', (req, res) => {
     if (req.body.message === undefined || req.body.message === '') {
-        // req.session.error = "il y a une erreur le formulaire est vide :("
         req.flash('error', "Vous n'avez pas posté de message :(")
         res.redirect('/')
     } else {
-        // req.session.success = "Merci :)"
-        let Message = require('./models/message')
+        // add message to db
+        const Message = require('./models/message')
         Message.create(req.body.message, () => {
             req.flash('success', "Merci :)")
             res.redirect('/')
