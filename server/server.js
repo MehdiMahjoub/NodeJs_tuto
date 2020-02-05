@@ -49,8 +49,11 @@ app.post('/', (req, res) => {
         res.redirect('/')
     } else {
         // req.session.success = "Merci :)"
-        req.flash('success', "Merci :)")
-        res.redirect('/')
+        let Message = require('./models/message')
+        Message.create(req.body.message, () => {
+            req.flash('success', "Merci :)")
+            res.redirect('/')
+        })
     }
 })
 
