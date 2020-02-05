@@ -17,13 +17,13 @@
        <a href="/" class="header item">Accueil</a>
     </div>
     <div class="ui main container">
-        <% if (locals.error) { %>
+        <% if (locals.flash && locals.flash.error) { %>
         <div class="ui negative message">
-            <%= error %>
+            <%= flash.error %>
         </div>
         <% } %>
-        <% if(locals.success) { %>
+        <% if(locals.flash && locals.flash.success) { %>
             <div class="ui positive message">
-                <%= success %>
+                <%= flash.success %>
             </div>
         <% } %>
